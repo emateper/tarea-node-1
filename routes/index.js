@@ -16,3 +16,23 @@ app.get('/', (req, res) => {
 
 
 module.exports = router;
+
+app.get('/mensaje/:tipo', (req, res)) => {
+  const tipoMensaje = req.params.tipo;
+  let mensaje;
+}
+    switch (tipoMensaje) {
+      case 'saludo': 
+        mensaje = 'Hola';
+        break;
+
+      case 'Despedida':
+        mensaje = 'Chau';
+        break;
+        
+      default: 
+        mensaje = 'Mensaje no disponible'; 
+    }
+
+
+  res.send(mensaje);
